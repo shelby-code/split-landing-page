@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root{
+    --expanded-width: 80%;
+    --shrinked-width: 20%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.split.left{
+    position: absolute;
+    left: 0%;
+    display: flex;
+    height: 100%;
+    width: 50%;
+    background-image: url('https://images.unsplash.com/photo-1604409273943-ed5b1a083a51?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=685&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: width 1s ease-in;
+}
+
+.split.right{
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    width: 50%;
+    background-image: url('https://images.unsplash.com/photo-1583573636253-94ba40113201?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1196&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: width 1s ease-in;
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(18, 42, 175, 0.295);
+    height: 100%;
+    width: 100%;
+    
+}
+
+.split.left::before{
+    content: '';
+    position: absolute;
+    background-color: rgba(57, 58, 61, 0.459);
+    height: 100%;
+    width: 100%;
+}
+
+h2{
+    color: honeydew;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    
+}
+.right>.btn{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    color: honeydew;
+    text-decoration: none;
+    border: 2px blue solid;
+    border-radius: 10px;
+    padding: 15px;
+    transition: background-color 0.5s ease-in;
+}
+
+.left>.btn{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    border: 2px grey solid;
+    border-radius: 10px;
+    transition: background-color 0.5s ease-in;
+}
+
+.right>.btn:hover{
+    background-color: #4444f1;
+    border-color: #4444f1;
+}
+
+.left>.btn:hover{
+    background-color: rgb(199, 178, 178);
+    border-color: rgb(199, 178, 178);
+}
+
+.expand-right .right{
+    width: var(--expanded-width);
+}
+.expand-right .left{
+    width: var(--shrinked-width);
+}
+
+.expand-left .left{
+    width: var(--expanded-width);
+}
+.expand-left .right{
+    width: var(--shrinked-width);
+}
